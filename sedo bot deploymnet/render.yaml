@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sedo-martial-art-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -u main.py
+    envVars:
+      - key: CUSTOMER_BOT_TOKEN
+        sync: false
+      - key: ADMIN_BOT_TOKEN
+        sync: false
+      - key: PORT
+        value: 8080
+      - key: PYTHONUNBUFFERED
+        value: 1
+    healthCheckPath: /health

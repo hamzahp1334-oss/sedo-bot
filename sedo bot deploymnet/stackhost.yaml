@@ -1,0 +1,14 @@
+# stackhost.yaml - StackHost Deployment Configuration
+runtime:
+  image: python:3.11-slim
+
+commands:
+  package: ""
+  build:
+    - "pip install --upgrade pip"
+    - "pip install -r requirements.txt"
+  start: "python -u main.py"
+
+repository:
+  branch: main
+  auto_deploy: true
